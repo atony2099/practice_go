@@ -1,0 +1,22 @@
+syntax = "proto3";
+package chat;
+
+message Message {
+  string body = 1;
+}
+
+message  GetOrderReq{
+    string id = 1;
+}
+
+message  GetOrderRes {
+    string order_name = 1;
+    int64  price = 2;
+}
+
+
+
+service ChatService {
+  rpc SayHello(Message) returns (Message) {}
+  rpc GetOrder(GetOrderReq) returns(GetOrderRes){}
+}

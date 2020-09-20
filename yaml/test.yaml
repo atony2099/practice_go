@@ -1,0 +1,59 @@
+#运行模式,开发模式=debug,线上模式=release
+
+run_env: debug
+mysql:
+  default:
+    user: dt_test_db
+    password: a64518d753d43ddad02cc876dec09e1a
+    protol: tcp
+    host: rm-2zednv6ygbj701kn2vo.mysql.rds.aliyuncs.com
+    port: 3306
+    dbname: know_everything
+    charset: utf8mb4
+    maxActive: 50
+    maxIdle: 25
+    showSQL: true
+  bigdata:
+    user: root
+    password: 123456
+    protol: tcp
+    host: localhost
+    port: 3306
+    dbname: tang
+    charset: utf8mb4
+    maxActive: 50
+    maxIdle: 25
+    showSQL: true
+redis:
+  address: 127.0.0.1:6379
+  network: tcp
+  maxIdle: 16
+  maxActive: 100
+  idleTimeout: 300
+kafka:
+  brokers: [47.94.94.114:9092,47.94.94.114:9093,47.94.94.114:9094]
+  dialTimeout: 15
+  readTimeout: 10
+  writeTimeout: 10
+  groupID: dt
+log:
+  filepath: tmp
+  filename: console.log
+  level: debug
+  maxBackups: 30
+  stdout: true
+jwt:
+  privateKey: https://www.treesmob.com/ssp/key
+web:
+  #监听类型
+  network: tcp
+  #地址
+  http: 127.0.0.1:8080
+  #读取超时
+  read_timeout: 10s
+  #写超时
+  write_timeout: 10s
+  #空闲超时
+  idle_timeout: 10s
+  #是否开启http pprof trace...
+  monitor: true
