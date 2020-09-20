@@ -10,6 +10,6 @@ type OderInfo interface {
 func (oderS *OrderService) GetOrder(s transport.GetOder) transport.OderInfo {
 	fmt.Println("current id:", s.Id)
 
-	return
+	return transport.OderInfo{Id:s.Id}
 
 }
